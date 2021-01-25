@@ -72,7 +72,7 @@ body {
   display: flex;
 }
 
-@media (max-width: 50em) {
+@media (min: 555px) {
   .main-logo {
     width: 70%;
   }
@@ -98,10 +98,58 @@ body {
   /* border: white 2px solid; */
 }
 
+.contact-wrapper {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-wrapper .contact-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-wrapper .contact-section .contact-container {
+  margin: 0 5%;
+  width: 22em;
+  max-width: 23em;
+  border: solid #fff 0.5em;
+  border-radius: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+/* ============================== Discography =========================== */
 .discographySection {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 100;
   /* height: 100hv; */
   width: 100%;
-  background-color: #fff;
+  background-color: #141414;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,73 +162,241 @@ body {
 }
 
 .netflix-wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (100%)[3];
-      grid-template-columns: repeat(3, 100%);
-  width: 100%;
-  height: 60vh;
-  border: #1b8bf9 3px solid;
+  width: 60%;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #4BB3FD), to(#F9B3D1));
+  background: linear-gradient(to right, #4BB3FD 4%, #F9B3D1);
+  color: black;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* Main Album-like display */
 }
 
-.netflix-wrapper section {
+.netflix-wrapper .main-display {
+  z-index: 2;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: rgba(0, 0, 0, 0.07) 0.15em solid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto 0;
+  width: 25em;
+  opacity: 1;
+  -webkit-transform: perspective(30em) rotateY(8deg) scale(0.93);
+          transform: perspective(30em) rotateY(8deg) scale(0.93);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  -webkit-box-shadow: -0.2em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+          box-shadow: -0.2em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
+.netflix-wrapper .main-display:hover {
+  cursor: pointer;
+  -webkit-transform: perspective(30em) rotateY(0) scale(1);
+          transform: perspective(30em) rotateY(0) scale(1);
+  opacity: 0.3;
+  -webkit-box-shadow: -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+          box-shadow: -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+}
+
+.netflix-wrapper .netflix-info {
+  font-family: 'Nanum Gothic', sans-serif;
+  color: #141414;
+  display: none;
+  font-weight: 700;
+  z-index: 1;
+  position: absolute;
+  margin: 10% auto;
+  width: 25em;
+  height: 20em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 300%;
+}
+
+.netflix-wrapper .netflix-list {
+  font-weight: 300;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 5%;
+  padding: 0;
   width: 100%;
-  height: 30%;
-  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.netflix-wrapper .netflix-list ul {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  border: 4px solid yellow;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  list-style: none;
+  padding: 0;
+  border-top: #141414 solid 0.3em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.netflix-wrapper section .netflix-item {
-  -webkit-transition: 250ms all;
-  transition: 250ms all;
-  border: solid red 2px;
-  height: 15em;
+.netflix-wrapper .netflix-list ul li {
+  margin: 0.5em auto;
 }
 
-.netflix-wrapper section .netflix-item:hover {
-  margin: 0 5px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.netflix-wrapper .netflix-list ul li:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
 }
 
-.netflix-wrapper section .netflix-item img {
-  height: 15em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-}
-
-.netflix-wrapper section a {
-  position: absolute;
-  color: #d30101;
-  text-decoration: none;
-  font-size: 6em;
-  background: black;
-  width: 1%;
-  padding: 20px;
-  text-align: center;
-  z-index: 1;
-}
-
-.netflix-wrapper section a:nth-of-type(1) {
-  top: 0;
-  left: 0;
-  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(black), to(100%));
-  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black, 100%);
-}
-
-.netflix-wrapper section a:nth-of-type(2) {
-  top: 0;
-  right: 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(100%));
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black, 100%);
+@media (max-width: 555px) {
+  .netflix-wrapper {
+    margin-top: 30%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+  }
+  .netflix-wrapper .main-display {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    max-width: 15em;
+    border: blue 2px solid;
+    -webkit-transform: perspective(0);
+            transform: perspective(0);
+  }
+  .netflix-wrapper .netflix-info {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #141414;
+    display: none;
+    font-weight: 700;
+    z-index: 1;
+    position: absolute;
+    margin: 8% auto;
+    width: 25em;
+    height: 10%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    text-align: center;
+    font-size: 1rem;
+    border: greenyellow 2px solid;
+  }
+  .netflix-wrapper .netflix-list {
+    margin-left: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    border: white solid 2px;
+    height: 100%;
+  }
+  .netflix-wrapper .netflix-list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    list-style: none;
+    padding: 0;
+    border: #2436bf solid 1px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .netflix-wrapper .netflix-list ul li {
+    margin: 0.2em auto;
+  }
+  .contact-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact-wrapper h1 {
+    top: 50%;
+  }
+  .contact-wrapper .contact-section {
+    border: solid white 0.2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-wrapper .contact-section .contact-container {
+    margin: 1em auto;
+    width: 15em;
+    border: solid #fff 0.4em;
+    border-radius: 9%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .contact-wrapper .contact-section #contact-kr {
+    height: 19em;
+  }
+  .contact-wrapper .contact-section #contact-en {
+    height: 19em;
+  }
 }
 
 .small-container {
@@ -190,22 +406,31 @@ body {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 
-.discoList {
-  color: rgba(0, 0, 0, 0.9);
-  border: navy solid 1rem;
+.small-container .discoList {
+  background: rgba(230, 221, 221, 0.084);
   text-align: center;
   margin: 5% 5%;
 }
 
-.discographyImg {
+.small-container .discoList .discographyImg {
+  margin-top: 10%;
+  border: rgba(171, 171, 171, 0.913) 2px solid;
+  border-radius: 3%;
   width: 10rem;
   height: 10rem;
 }
 
-.elementInfo {
+.small-container .discoList .elementInfo {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 100;
   opacity: 1;
   /* border:rgba(23, 26, 29, 0.6) 2px solid; */
-  color: black;
+  color: rgba(233, 233, 233, 0.913);
+  font-weight: 100;
+}
+
+.small-container .discoList .elementInfo p {
+  font-size: 0.9em;
 }
 
 /* ===================  navigation ================= */
@@ -221,6 +446,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: fixed;
   z-index: 1;
   background: rgba(0, 0, 0, 0.7);
@@ -234,30 +462,26 @@ nav ul {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   padding: 0;
 }
 
 nav li {
-  margin: 0.3em 0;
+  margin: 0 0.5em;
 }
 
 nav a {
   margin-left: 0;
   color: white;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-@media (min-width: 555px) {
+@media (max-width: 555px) {
   nav ul {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -278,19 +502,26 @@ nav li :hover {
 /* ========== LANGUAGE BUTTON 
 
 ================ */
-.btn {
+.lang-dropdown {
   z-index: 2;
+  display: inline-block;
+}
+
+.lang-dropdown .selected-lang {
+  z-index: 2;
+  font-size: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 2;
+  cursor: pointer;
+  color: white;
   position: fixed;
   top: 0.5em;
-  left: 90%;
+  right: 1%;
   font-family: "Lato";
-  color: #7899d4;
-  text-decoration: none;
-  text-transform: uppercase;
   /* letter-spacing: 2.8px; */
-  background-color: #f0f7f4;
-  padding: 1em 1.2em;
-  border-radius: 50%;
+  background-color: #f0f7f410;
   -webkit-box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);
           box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -298,13 +529,16 @@ nav li :hover {
   transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
 }
 
-.btn:hover {
-  -webkit-box-shadow: 3px 4.9px 16px rgba(27, 139, 249, 0.6);
-          box-shadow: 3px 4.9px 16px rgba(27, 139, 249, 0.6);
-  /* letter-spacing: 5px; */
+.lang-dropdown .selected-lang:before {
+  content: '';
+  display: block;
+  margin-right: 0.3em;
+  width: 24px;
+  height: 24px;
+  background-image: url(https://www.countryflags.io/us/shiny/24.png);
 }
 
-.btn--clicked {
+.lang-dropdown--clicked {
   -webkit-transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
   transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
   padding: 15px 2px;
@@ -313,6 +547,30 @@ nav li :hover {
   z-index: -10;
 }
 
+.lang-options {
+  z-index: 3;
+  display: none;
+  position: absolute;
+  right: 1%;
+  margin-top: 1em;
+  border: yellow 2px solid;
+}
+
+.lang-options a {
+  display: block;
+  position: relative;
+  color: white;
+}
+
+.lang-options a:hover {
+  cursor: pointer;
+}
+
+.show {
+  display: inline-block;
+}
+
+/* language switching effect colors */
 .color {
   display: block;
   width: 0;
@@ -335,26 +593,28 @@ nav li :hover {
 }
 
 .color--blue {
-  background-color: #1b8bf9;
+  background-color: #067df4;
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
 }
 
 .color--orange {
-  background-color: #ff6c19;
+  background-color: #fa6610;
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
 }
 
 .color--green {
-  background-color: #41ff9f;
+  background-color: #73de09;
   -webkit-transition-delay: 0.75s;
           transition-delay: 0.75s;
 }
 
 .color--white {
-  background-color: #f9f9f9;
+  background-color: #aba1a12e;
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
+
+/* =========================== */
 /*# sourceMappingURL=style.css.map */

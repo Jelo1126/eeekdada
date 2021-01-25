@@ -5,7 +5,9 @@
 
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nanum+Gothic:wght@100;400;700&display=swap" rel="stylesheet">
+
     </head>
     <body>
         
@@ -24,8 +26,25 @@
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
-                
-                        <a class="btn" href="" title="">あ</a>
+                        <div class="lang-dropdown" id="lang-menu">
+                            <button class="selected-lang" onmouseover="langFunction()" >
+                                EN
+                            </button>
+                            <div class="lang-options" id="myLang">
+                                <a>English</a>
+                                <a>日本語</a>
+                                <a>中文(简体)</a>
+                                <a>中文(繁体)</a>
+                                
+                                
+                                 
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+                        
                         <span class="color color--blue" data-value="1">
                         <span class="color color--orange" data-value="1">
                         <span class="color color--green" data-value="1">
@@ -63,79 +82,67 @@
 
                 <div class="discographySection" id="discography">
                     <div class="netflix-wrapper">
-                        <section id="section1">
-                            <a href="#section3"> < </a>
-                            <div class="netflix-item">
-                                <img src="discography_png/Lovestruck in the City.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Record of Youth.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/It's Okay to Not Be Okay.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Crash Landing On You.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Vagabond.png">
-                            </div>
-                            <a href="#section2"> > </a>
-                        </section>
-                        <section id="section2">
-                            <a href="#section1"> < </a>
-                            <div class="netflix-item">
-                                <img src="discography_png/Beautiful World.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Romance Is A Bonus Book.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Encounter.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Mr.Sunshine.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Where Stars Land.png">
-                            </div>
-                            <a href="#section3"> > </a>
-                        </section>
-                        <section id="section3">
-                            <a href="#section2"> < </a>
-                            <div class="netflix-item">
-                                <img src="discography_png/Life On Mars.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Wok of Love.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Not Played.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Rain or Shine.png">
-                            </div>
-                            <div class="netflix-item">
-                                <img src="discography_png/Suspicious Partner.png">
-                            </div>
-                            <a href="#section1"> > </a>
-                        </section>
+                        <div class="netflix-info"></div>
+                        <div class="netflix-list"></div>
+                        
                     </div>
                     <div class="small-container">
 
                     </div>
                 </div>
-            
-                <div class="section-container" id="contact">
-                    <h1>Contact</h1>
-                    <p>This is the main page
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
                 
+                
+                
+                <div class="contact-wrapper">
+                    <h1>Contact</h1>
+                <div class="contact-section" id="contact">
+                    
+                    <div class="contact-container" id="contact-kr">
+                        <h2>한국어</h2>
+                        <p>
+                            eeekdada@eeekdada.com <br>
+                            eeekdada
+
+                        </p>
+                    </div>
+                    <div class="contact-container" id="contact-en">
+                        <h2>English</h2>
+                    
+                        <p>
+                            eeekjello@eeekdada.com <br>
+                            Jello Ann
+
+                        </p>
+                    </div>
+                    <div class="contact-container" id='contact-jp'>
+                        <h2>日本語</h2> 
+                        
+
+                        Company name: <br>
+                        株式会社 JPコンサルティング <br>
+                        
+
+                        担当: <br>
+
+                        三村　一二三 <br>
+
+                        Address: <br>
+
+                        〒160-0023 <br>
+                        東京都新宿区西新宿7-21-3　<br>
+                        西新宿大京ビル1008号<br>
+
+                        Phone:<br>
+                        03-5937-1531<br>
+
+                        Email:<br>
+                        Info@jpcon.co.jp<br>
+                        
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
             
             </main>
             </div>

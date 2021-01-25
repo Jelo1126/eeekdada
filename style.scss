@@ -12,10 +12,12 @@ html {
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
+    
     background-color:rgb(0, 0, 0);
     color: rgba(255, 255, 255, 0.872);
     /* background: linear-gradient(to right, #000000 , #23262e); */
     background: #141414;
+    
 }
 :root {
     --width: #studio-image[max-width];
@@ -84,7 +86,7 @@ body {
     display: flex;
 }
 
-@media (max-width:50em) {
+@media (min:555px) {
     .main-logo {
         width: 70%;
     }
@@ -100,15 +102,46 @@ body {
     width: 100%;
     height: 100vh;
     /* border: white 2px solid; */
+
+}
+
+.contact-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .contact-section {
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        // align-items: flex-start;
+        
+        justify-content: space-between;
+    
+        .contact-container {
+            margin: 0 5%;
+            width: 22em;
+            max-width: 23em;
+            border: solid #fff 0.5em;
+            border-radius: 3em;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
 }
 
 
+/* ============================== Discography =========================== */
 
 .discographySection {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 100;
     /* height: 100hv; */
     width: 100%;
-    background-color: #fff;
-    
+    background-color: #141414;
+    color: white;
     display: flex;
     flex-direction: column;
     
@@ -116,97 +149,249 @@ body {
     
 }
 
-
-
 .netflix-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 100%);
-    width: 100%;
-    height: 60vh;
-    border: #1b8bf9 3px solid;
+    // background-color: #f9f9f9;
+    width: 60%;
+    margin: 0 auto;
+    background:linear-gradient(to right, #4BB3FD 4%, #F9B3D1);
+    
+    color: black;
+    height: 80vh;
+    // border: yellow 2px solid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    
-    
-    section {
+
+
+    /* Main Album-like display */
+    .main-display {
+        z-index: 2;
+        color: white;
+        display: flex;
+        // border-top: rgba(164, 93, 93, 0.13) 0.1em solid;
+        border-left: rgba(0, 0, 0, 0.07) 0.15em solid;
+        justify-content: center;
+        align-items: center;
+        margin: auto 0;
+        width: 25em;
+        opacity: 1;
+        transform: 
+                perspective(30em)
+                rotateY(8deg) scale(0.93);
+        transition: 0.3s ease all;
+        box-shadow:
+           -0.2em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7); /* offset-x | offset-y | blur-radius | spread-radius | color */
+
+        &:hover {       
+            cursor: pointer;
+            transform:
+                perspective(30em)
+                rotateY(0) scale(1);
+            opacity: 0.3;
+            box-shadow:
+                -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+        }
+        
+
+    }
+
+    .netflix-info {
+        font-family: 'Nanum Gothic', sans-serif;
+        color: #141414;
+        display:none;
+        font-weight: 700;
+        z-index: 1;
+        position: absolute;
+        
+        margin: 10% auto;
+        width: 25em;
+        height: 20em;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 300%;
+        // border: greenyellow 2px solid;
+    }
+
+    .netflix-list {
+        font-weight: 300;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        top: 5%;
+        padding: 0;
+        // border: white solid 2px;
         width: 100%;
-        height: 30%;
-        position:relative;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        border: 4px solid yellow;
+        justify-content: flex-end;
+        
+        ul {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            list-style: none;
+            padding: 0;
+            border-top: #141414 solid 0.3em;
+            justify-content: space-evenly;
 
-        .netflix-item {
-            transition: $duration all;
-            border: solid red 2px;
-            height: 15em;
-            
-
-            &:hover {
-                margin: 0 5px;
-                transform: scale(1.2);
-            }
-
-            img {
-                height: 15em;
-                object-fit: cover;
-                width: 100%;
-            }
-        }
-
-        a {
-            position: absolute;
-            color: rgb(211, 1, 1);
-            text-decoration: none;
-            font-size: 6em;
-            background:rgb(0, 0, 0);
-            width: 1%;
-            padding: 20px;
-            text-align: center;
-            z-index: 1;
-
-            &:nth-of-type(1) {
-                top:0; left:0;
-                background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0,0,0,1), 100%);
-            }
-            &:nth-of-type(2) {
-                top:0; right:0;
-                background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1), 100%);
+            li {
+                margin: 0.5em auto;
+                
+                
+                &:hover {
+                    transition: 0.2s;
+                    transform: scale(1.05);
+                    cursor: pointer;
+                    
+                    
+                }
             }
         }
-
-    } 
+    }
 }
 
+@media (max-width: 555px) {
+    .netflix-wrapper {
+        margin-top: 30%;
+        flex-direction: column;
+        width: 90%;
+        .main-display {
+            order: -1;
+            max-width: 15em;
+            border: blue 2px solid;
+            transform:
+                perspective(0)
 
+            
+        }
+        .netflix-info {
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #141414;
+            display:none;
+            font-weight: 700;
+            z-index: 1;
+            position: absolute;
+            margin: 8% auto;
+            width: 25em;
+            height: 10%;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            font-size: 1rem;
+            // line-height: 300%;
+            border: greenyellow 2px solid;
+        }
+        .netflix-list {
+            margin-left: 2%;
+            display: flex;
+            padding: 0;
+            border: white solid 2px;
+            height: 100%;
+            ul {
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                padding: 0;
+                border: rgb(36, 54, 191) solid 1px;
+                justify-content: space-evenly;
+    
+                li {
+                    margin: 0.2em auto;
 
+                
+                }
+            }
+        }
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        h1 {
+            top: 50%;
+        }
+        .contact-section {
+            
+            border: solid white 0.2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        
+            .contact-container {
+                margin: 1em auto;
+                
+                width: 15em;
+                // height: 50%;
+                border: solid #fff 0.4em;
+                border-radius: 9%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                
+                
+            }
+            
+            #contact-kr {
+                height: 19em;
+            }
+            #contact-en {
+                height: 19em;
+            }
+        }
+
+        
+    }
+    
+}
 
 
 .small-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    
+    .discoList {
+        
+        background: rgba(230, 221, 221, 0.084);
+        // border: rgb(245, 245, 245) solid 0.6rem;
+        text-align: center;
+        margin: 5% 5%;
+        
+       
+
+        .discographyImg {
+            margin-top: 10%;
+            border:rgba(171, 171, 171, 0.913) 2px solid;
+            border-radius: 3%;
+            width: 10rem;
+            height: 10rem;
+        }
+
+
+        .elementInfo {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: 100;
+            opacity: 1;
+            /* border:rgba(23, 26, 29, 0.6) 2px solid; */
+            color: rgba(233, 233, 233, 0.913);
+            font-weight: 100;
+
+            p {
+                font-size: 0.9em;
+            }
+
+        }
+    }
 }
 
 
-.discoList {
-    color:rgba(0, 0, 0, 0.9);
-    border: navy solid 1rem;
-    text-align: center;
-    margin: 5% 5%;
-   
-}
-
-.discographyImg {
-    width: 10rem;
-    height: 10rem;
-}
 
 
 
-.elementInfo {
-    opacity: 1;
-    /* border:rgba(23, 26, 29, 0.6) 2px solid; */
-    color: black;
-}
+
+
 
 
 
@@ -217,10 +402,15 @@ body {
     align-items: center;
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
     
     position: fixed;
     z-index: 1;
     background: rgba(0, 0, 0, 0.7);
+    
+
+    
+    
     
 }
 
@@ -228,13 +418,13 @@ nav ul {
     justify-content: center;
     display:flex;
     list-style: none;
-    flex-direction: column;
+    // flex-direction: row;
     padding: 0;
 }
 
 
 nav li {
-    margin: 0.3em 0;
+    margin: 0 0.5em;
     
 }
 
@@ -242,12 +432,12 @@ nav a {
     margin-left: 0;
     color: white;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 400;
 }
 
-@media (min-width: 555px) {
+@media (max-width: 555px) {
     nav ul {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         /* border: white solid 1px; */
         padding: 0;
@@ -255,7 +445,7 @@ nav a {
 
     nav li {
         margin: 0 1em;
-        
+    
     }
 }
 
@@ -270,33 +460,89 @@ nav li :hover {
 
 ================ */
 
-.btn {
+
+
+
+
+
+
+.lang-dropdown {
     z-index: 2;
-    position: fixed;
-    top: 0.5em;
-    left: 90%;
-    font-family: "Lato";
-    color: #7899d4;
-    text-decoration: none;
-    text-transform: uppercase;
-    /* letter-spacing: 2.8px; */
-    background-color: #f0f7f4;
-    padding: 1em 1.2em;
-    border-radius: 50%;
-    box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);        /* offset-x | offset-y | blur-radius | spread-radius | color */
-    transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
-  }
-.btn:hover {
-    box-shadow: 3px 4.9px 16px rgba(27, 139, 249, 0.6);
-    /* letter-spacing: 5px; */
-  }
-.btn--clicked {
+    display:inline-block;
+
+    .selected-lang {
+        z-index: 2;
+        font-size: 0.7rem;
+        display: flex;
+        // justify-content: space-between;
+        line-height: 2;
+        cursor: pointer;
+        color: white;
+        position: fixed;
+        top: 0.5em;
+        right: 1%;
+        font-family: "Lato";
+        /* letter-spacing: 2.8px; */
+        background-color: #f0f7f410;
+        // padding: 1em 1.2em;
+        // border-radius: 50%;
+        box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+
+        &:before {
+            content: '';
+            display: block;
+            margin-right: 0.3em;
+            width: 24px;
+            height: 24px;
+            background-image: url(https://www.countryflags.io/us/shiny/24.png);
+        }
+    }
+    
+}
+// .lang-dropdown:hover {
+//     box-shadow: 3px 4.9px 16px rgba(27, 139, 249, 0.6);
+//     /* letter-spacing: 5px; */
+//     }
+.lang-dropdown--clicked {
     transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
     padding: 15px 2px;
     width: 50px;
     color: transparent;
     z-index: -10;
-  }
+    }
+
+.lang-options {
+    z-index: 3;
+
+    display: none;
+    position: absolute;
+    // top: 5%;
+    right: 1%;
+    margin-top: 1em;
+    border: yellow 2px solid;
+        
+    a {
+        display: block;
+        position: relative;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+        
+
+
+.show {
+    display: inline-block;
+}
+
+
+/* language switching effect colors */
+
   
 .color {
     display: block;
@@ -318,24 +564,24 @@ nav li :hover {
 }
   
 .color--blue {
-    background-color: #1b8bf9;
+    background-color: #067df4;
     transition-delay: 0.25s;
   }
   
 .color--orange {
-    background-color: #ff6c19;
+    background-color: #fa6610;
     transition-delay: 0.5s;
   }
   
 .color--green {
-    background-color: #41ff9f;
+    background-color: #73de09;
     transition-delay: 0.75s;
   }
   
 .color--white {
-    background-color: #f9f9f9;
+    background-color: #aba1a12e;
     transition-delay: 1s;
   }
 
 
-
+/* =========================== */
