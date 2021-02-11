@@ -1,15 +1,19 @@
 /* mint cream: F0F7F4,  Cornflower Blue: 7899D4, Dark Cornflower Blue: 003F88  */
 html {
   scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inconsolata', monospace;
   background-color: black;
   color: rgba(255, 255, 255, 0.872);
   /* background: linear-gradient(to right, #000000 , #23262e); */
   background: #141414;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -131,7 +135,7 @@ body {
   width: 22em;
   max-width: 23em;
   border: solid #fff 0.5em;
-  border-radius: 3em;
+  border-radius: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,7 +152,6 @@ body {
   font-weight: 100;
   /* height: 100hv; */
   width: 100%;
-  background-color: #141414;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,13 +164,117 @@ body {
           column-gap: 5%;
 }
 
-.netflix-wrapper {
+.recent-discography {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(233, 4, 4, 0.735)), to(#141414));
+  background: linear-gradient(to right, rgba(233, 4, 4, 0.735), #141414);
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+}
+
+.recent-discography .swiper-container {
+  width: 40%;
+  height: 100%;
+  margin: 0 10%;
+  left: 0;
+}
+
+.recent-discography .swiper-container:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.recent-discography .swiper-container:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.recent-discography .swiper-slide {
+  text-align: center;
+  background: none;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.recent-discography .swiper-pagination {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  text-align: center;
+  height: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.recent-discography .swiper-pagination-bullet {
+  width: 15em;
+  height: 1.5em;
+  font-weight: 700;
+  line-height: 1.6em;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.927);
+  -webkit-box-shadow: inset 0.5em 0.5em rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  border-radius: 1.9%;
+  margin-left: 5em;
+}
+
+.recent-discography .swiper-pagination-bullet:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.recent-discography .netflix-poster {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 60%;
+  height: 80%;
+  -webkit-transform: perspective(30em);
+          transform: perspective(30em);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.recent-discography .netflix-poster .poster-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 auto;
-  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #4BB3FD), to(#F9B3D1));
-  background: linear-gradient(to right, #4BB3FD 4%, #F9B3D1);
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-box-shadow: -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3), 0 0 0 1.1em #fffefe, 0 0 0 2.1em black, 4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+          box-shadow: -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3), 0 0 0 1.1em #fffefe, 0 0 0 2.1em black, 4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+}
+
+.recent-discography .netflix-wrapper {
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  right: 0;
   color: black;
-  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,7 +288,7 @@ body {
   /* Main Album-like display */
 }
 
-.netflix-wrapper .main-display {
+.recent-discography .netflix-wrapper .main-display {
   z-index: 2;
   color: white;
   display: -webkit-box;
@@ -195,7 +302,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: auto 0;
-  width: 25em;
+  width: 70%;
   opacity: 1;
   -webkit-transform: perspective(30em) rotateY(8deg) scale(0.93);
           transform: perspective(30em) rotateY(8deg) scale(0.93);
@@ -206,7 +313,7 @@ body {
   /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
 
-.netflix-wrapper .main-display:hover {
+.recent-discography .netflix-wrapper .main-display:hover {
   cursor: pointer;
   -webkit-transform: perspective(30em) rotateY(0) scale(1);
           transform: perspective(30em) rotateY(0) scale(1);
@@ -215,10 +322,14 @@ body {
           box-shadow: -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
 }
 
-.netflix-wrapper .netflix-info {
-  font-family: 'Nanum Gothic', sans-serif;
-  color: #141414;
-  display: none;
+.recent-discography .netflix-wrapper .netflix-info {
+  font-family: 'Inconsolata', sans-serif;
+  text-decoration: line-through;
+  color: rgba(255, 254, 254, 0.7);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-weight: 700;
   z-index: 1;
   position: absolute;
@@ -236,68 +347,103 @@ body {
   line-height: 300%;
 }
 
-.netflix-wrapper .netflix-list {
-  font-weight: 300;
+.recent-discography .netflix-list {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.699);
+  position: relative;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  top: 5%;
-  padding: 0;
-  width: 100%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 
-.netflix-wrapper .netflix-list ul {
+.recent-discography .netflix-list ul {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
   list-style: none;
   padding: 0;
-  border-top: #141414 solid 0.3em;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  border-top: #141414 solid 0.4em;
 }
 
-.netflix-wrapper .netflix-list ul li {
-  margin: 0.5em auto;
+.recent-discography .netflix-list ul li {
+  margin: 0.6em 1em;
 }
 
-.netflix-wrapper .netflix-list ul li:hover {
+.recent-discography .netflix-list ul li:hover {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   cursor: pointer;
+  color: white;
 }
 
-@media (max-width: 555px) {
+@media (max-width: 1650px) {
+  .recent-discography {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .recent-discography .netflix-wrapper {
+    width: 20%;
+    display: none;
+  }
+  .recent-discography .netflix-wrapper .main-display {
+    width: 70%;
+    font-size: 0.4em;
+  }
+  .recent-discography .swiper-container {
+    width: 90%;
+  }
+  .recent-discography .swiper-container .netflix-poster {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    height: 80%;
+    -webkit-transform: perspective(30em);
+            transform: perspective(30em);
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .recent-discography .swiper-container .netflix-poster .poster-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    height: 80%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -webkit-box-shadow: -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3), 0 0 0 1.1em #fffefe, 0 0 0 2.1em black, 4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+            box-shadow: -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3), 0 0 0 1.1em #fffefe, 0 0 0 2.1em black, 4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+  }
+}
+
+@media (max-width: 800px) {
   .netflix-wrapper {
+    height: 100vh;
+    width: 90%;
     margin-top: 30%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 90%;
   }
   .netflix-wrapper .main-display {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
     max-width: 15em;
-    border: blue 2px solid;
+    min-width: 250px;
     -webkit-transform: perspective(0);
             transform: perspective(0);
+    margin-top: 3%;
   }
   .netflix-wrapper .netflix-info {
     font-family: 'Nanum Gothic', sans-serif;
@@ -317,7 +463,6 @@ body {
             justify-content: space-evenly;
     text-align: center;
     font-size: 1rem;
-    border: greenyellow 2px solid;
   }
   .netflix-wrapper .netflix-list {
     margin-left: 2%;
@@ -325,7 +470,6 @@ body {
     display: -ms-flexbox;
     display: flex;
     padding: 0;
-    border: white solid 2px;
     height: 100%;
   }
   .netflix-wrapper .netflix-list ul {
@@ -357,12 +501,11 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .contact-wrapper h1 {
-    top: 50%;
+    top: 20%;
+    height: 100%;
   }
   .contact-wrapper .contact-section {
-    border: solid white 0.2px;
+    margin-top: 20%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -418,6 +561,8 @@ body {
   border-radius: 3%;
   width: 10rem;
   height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .small-container .discoList .elementInfo {
@@ -450,7 +595,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -465,15 +610,35 @@ nav ul {
   padding: 0;
 }
 
-nav li {
+nav ul li {
   margin: 0 0.5em;
+}
+
+#topButton {
+  font-weight: 100;
+  font-size: 1rem;
+  position: fixed;
+  right: 1.4%;
+  bottom: 3.4%;
+  color: white;
+  padding: 0.5em;
+  border: solid white 1px;
+  border-radius: 20%;
+}
+
+#topButton:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 0.04em 0.1em #fffefe;
+          box-shadow: 0 0 0.04em 0.1em #fffefe;
 }
 
 nav a {
   margin-left: 0;
   color: white;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 555px) {
@@ -503,12 +668,12 @@ nav li :hover {
 
 ================ */
 .lang-dropdown {
-  z-index: 2;
+  z-index: 1;
   display: inline-block;
 }
 
 .lang-dropdown .selected-lang {
-  z-index: 2;
+  z-index: 100;
   font-size: 0.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -518,13 +683,11 @@ nav li :hover {
   color: white;
   position: fixed;
   top: 0.5em;
-  right: 1%;
+  right: 2%;
   font-family: "Lato";
+  border: none;
   /* letter-spacing: 2.8px; */
   background-color: #f0f7f410;
-  -webkit-box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);
-          box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
   -webkit-transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
   transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
 }
@@ -548,12 +711,15 @@ nav li :hover {
 }
 
 .lang-options {
-  z-index: 3;
+  width: 5em;
+  z-index: 333;
+  font-size: 0.8rem;
   display: none;
   position: absolute;
-  right: 1%;
-  margin-top: 1em;
-  border: yellow 2px solid;
+  right: 0.05vw;
+  top: 2em;
+  border: #b8b2b2 2px solid;
+  border-radius: 6%;
 }
 
 .lang-options a {
@@ -564,10 +730,17 @@ nav li :hover {
 
 .lang-options a:hover {
   cursor: pointer;
+  background: rgba(171, 171, 171, 0.913);
 }
 
 .show {
   display: inline-block;
+}
+
+.flex-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /* language switching effect colors */

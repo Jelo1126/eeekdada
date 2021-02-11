@@ -5,19 +5,21 @@ $duration: 250ms;
 
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 
 
 body {
+    
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inconsolata', monospace;
     
     background-color:rgb(0, 0, 0);
     color: rgba(255, 255, 255, 0.872);
     /* background: linear-gradient(to right, #000000 , #23262e); */
     background: #141414;
-    
+    box-sizing: border-box;
 }
 :root {
     --width: #studio-image[max-width];
@@ -124,7 +126,7 @@ body {
             width: 22em;
             max-width: 23em;
             border: solid #fff 0.5em;
-            border-radius: 3em;
+            border-radius: 2em; 
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -140,7 +142,7 @@ body {
     font-weight: 100;
     /* height: 100hv; */
     width: 100%;
-    background-color: #141414;
+    
     color: white;
     display: flex;
     flex-direction: column;
@@ -149,98 +151,216 @@ body {
     
 }
 
-.netflix-wrapper {
-    // background-color: #f9f9f9;
-    width: 60%;
-    margin: 0 auto;
-    background:linear-gradient(to right, #4BB3FD 4%, #F9B3D1);
-    
-    color: black;
-    height: 80vh;
-    // border: yellow 2px solid;
+
+
+.recent-discography {
+    background: linear-gradient(to right, rgba(233, 4, 4, 0.735), #141414);
+    height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-flow: wrap row;
+   
+    // align-items: flex-start;
+    // border: red solid 1px;
 
-
-    /* Main Album-like display */
-    .main-display {
-        z-index: 2;
-        color: white;
-        display: flex;
-        // border-top: rgba(164, 93, 93, 0.13) 0.1em solid;
-        border-left: rgba(0, 0, 0, 0.07) 0.15em solid;
-        justify-content: center;
-        align-items: center;
-        margin: auto 0;
-        width: 25em;
-        opacity: 1;
-        transform: 
-                perspective(30em)
-                rotateY(8deg) scale(0.93);
-        transition: 0.3s ease all;
-        box-shadow:
-           -0.2em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7); /* offset-x | offset-y | blur-radius | spread-radius | color */
-
-        &:hover {       
-            cursor: pointer;
-            transform:
-                perspective(30em)
-                rotateY(0) scale(1);
-            opacity: 0.3;
-            box-shadow:
-                -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+    .swiper-container {
+        width: 40%;
+        height: 100%;
+        margin: 0 10%;
+        // border: white solid 2px;
+        
+        left: 0;
+        &:hover {
+            cursor: grab;
         }
-        
-
+        &:active {
+            cursor: grabbing;
+        }
     }
-
-    .netflix-info {
-        font-family: 'Nanum Gothic', sans-serif;
-        color: #141414;
-        display:none;
-        font-weight: 700;
-        z-index: 1;
-        position: absolute;
-        
-        margin: 10% auto;
-        width: 25em;
-        height: 20em;
-        align-items: center;
-        justify-content: space-evenly;
+    .swiper-slide {
         text-align: center;
-        font-size: 1.4rem;
-        line-height: 300%;
-        // border: greenyellow 2px solid;
+        // font-size: 18px;
+        background: none;
+    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-pagination {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        text-align: center;
+        // border: yellow 2px solid;
+        height: 20%;
+        
+        align-items: center;
+        justify-content: center;
+      }
+
+      .swiper-pagination-bullet {
+        width: 15em;
+        height: 1.5em;
+        font-weight: 700;
+        line-height: 1.6em;
+        font-size: 0.7rem;
+        color: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.927);
+        box-shadow: inset 0.5em 0.5em rgba(0, 0, 0, 0.3);
+        border-radius: 1.9%;
+        margin-left: 5em;
+        
+
+        &:hover {
+            transform: scale(1.04);
+        }
+      }
+
+    
+
+    .netflix-poster {
+        display: flex;
+        // margin-top: 10%;
+        // margin: 10% auto;
+        width: 60%;
+        height: 80%;
+        transform: 
+                    perspective(30em);
+                    // rotateY(-10deg) scale(0.93);
+        
+        object-fit: contain;
+        .poster-image {
+            display: flex;
+            margin: 0 auto;
+            height: 80%;
+            // width: 100%;
+            object-fit: contain;
+            
+            box-shadow: 
+                        -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3),
+                        0 0 0 1.1em rgba(255, 254, 254, 1),
+                        0 0 0 2.1em rgba(0, 0, 0, 1),
+                        4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+
+            
+            }
+        }
+    
+
+
+    .netflix-wrapper {
+        
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        right:0;
+        
+        // background:linear-gradient(to right, #0D3B66 4%, #094074, #3C6997);
+        
+
+        color: black;
+        // height: 80vh;
+        // border: yellow 2px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    
+        /* Main Album-like display */
+        .main-display {
+            z-index: 2;
+            // border: blue 2px solid;
+            color: white;
+            display: flex;
+            // border-top: rgba(164, 93, 93, 0.13) 0.1em solid;
+            border-left: rgba(0, 0, 0, 0.07) 0.15em solid;
+            justify-content: center;
+            align-items: center;
+            margin: auto 0;
+            width: 70%;
+            opacity: 1;
+            transform: 
+                    perspective(30em)
+                    rotateY(8deg) scale(0.93);
+            transition: 0.3s ease all;
+            box-shadow:
+               -0.2em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7); /* offset-x | offset-y | blur-radius | spread-radius | color */
+    
+            &:hover {       
+                cursor: pointer;
+                transform:
+                    perspective(30em)
+                    rotateY(0) scale(1);
+                opacity: 0.3;
+                box-shadow:
+                    -0.1em 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.7);
+            }
+            
+    
+        }
+    
+        .netflix-info {
+            font-family: 'Inconsolata', sans-serif;
+            
+            text-decoration: line-through;
+            color:rgba(255, 254, 254, 0.7);
+            
+            flex-direction: column;
+            font-weight: 700;
+            z-index: 1;
+            position: absolute;
+            
+            margin: 10% auto;
+            width: 25em;
+            height: 20em;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            font-size: 1.4rem;
+            line-height: 300%;
+            // border: rgb(128, 185, 215) 2px solid;
+        }
+    
+        
     }
 
     .netflix-list {
-        font-weight: 300;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.699);
+        position: relative;
         order: 1;
         display: flex;
-        flex-direction: column;
-        top: 5%;
-        padding: 0;
+        // padding: 0;
         // border: white solid 2px;
-        width: 100%;
-        justify-content: flex-end;
         
         ul {
             display: grid;
+        
             grid-template-columns: repeat(4, auto);
             list-style: none;
             padding: 0;
-            border-top: #141414 solid 0.3em;
-            justify-content: space-evenly;
+            border-top: #141414 solid 0.4em;
+            // justify-content: space-evenly;
 
             li {
-                margin: 0.5em auto;
+                margin: 0.6em 1em;
                 
                 
                 &:hover {
                     transition: 0.2s;
                     transform: scale(1.05);
                     cursor: pointer;
+                    color: white;
                     
                     
                 }
@@ -249,17 +369,74 @@ body {
     }
 }
 
-@media (max-width: 555px) {
+@media (max-width: 1650px) {
+    .recent-discography{
+        flex-direction: row;
+        .netflix-wrapper {
+            width: 20%;
+            display: none;
+            .main-display {
+
+                width: 70%;
+                font-size: 0.4em;
+                
+            }
+        }
+        .swiper-container {
+            width: 90%;
+            .netflix-poster {
+                display: flex;
+                // margin-top: 10%;
+                margin: 0 auto;
+                width: 60%;
+                height: 80%;
+                transform: 
+                            perspective(30em);
+                            // rotateY(-10deg) scale(0.93);
+                
+                object-fit: contain;
+                .poster-image {
+                    display: flex;
+                    margin: 0 auto;
+                    height: 80%;
+                    // width: 100%;
+                    object-fit: contain;
+                    
+                    box-shadow: 
+                                -0.6em -0.6em 1em 0.4em rgba(74, 74, 72, 0.3),
+                                0 0 0 1.1em rgba(255, 254, 254, 1),
+                                0 0 0 2.1em rgba(0, 0, 0, 1),
+                                4em 2em 0.5em 1em rgba(33, 33, 33, 0.2);
+        
+                    
+                    }
+                }
+        }
+    
+    }
+   
+}
+
+
+
+
+
+@media (max-width: 800px) {
+
     .netflix-wrapper {
+        height: 100vh;
+        width: 90%;
         margin-top: 30%;
         flex-direction: column;
-        width: 90%;
+        
         .main-display {
             order: -1;
             max-width: 15em;
-            border: blue 2px solid;
+            min-width: 250px;
+            // border: blue 2px solid;
             transform:
-                perspective(0)
+                perspective(0);
+            margin-top: 3%;
 
             
         }
@@ -278,13 +455,13 @@ body {
             text-align: center;
             font-size: 1rem;
             // line-height: 300%;
-            border: greenyellow 2px solid;
+            // border: greenyellow 2px solid;
         }
         .netflix-list {
             margin-left: 2%;
             display: flex;
             padding: 0;
-            border: white solid 2px;
+            // border: white solid 2px;
             height: 100%;
             ul {
                 display: flex;
@@ -292,8 +469,8 @@ body {
                 list-style: none;
                 padding: 0;
                 border: rgb(36, 54, 191) solid 1px;
-                justify-content: space-evenly;
-    
+                justify-content:space-evenly;
+         
                 li {
                     margin: 0.2em auto;
 
@@ -307,13 +484,14 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-        h1 {
-            top: 50%;
-        }
+        top: 20%;
+        height: 100%;
+        // h1 {
+        //     top: 50%;
+        // }
         .contact-section {
-            
-            border: solid white 0.2px;
+            margin-top: 20%;
+            // border: solid white 0.2px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -367,6 +545,7 @@ body {
             border-radius: 3%;
             width: 10rem;
             height: 10rem;
+            object-fit: cover;
         }
 
 
@@ -405,7 +584,7 @@ body {
     justify-content: space-between;
     
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     background: rgba(0, 0, 0, 0.7);
     
 
@@ -420,19 +599,39 @@ nav ul {
     list-style: none;
     // flex-direction: row;
     padding: 0;
-}
+    
+    li {
+        margin: 0 0.5em;
+    
+    
+        
+    }
 
-
-nav li {
-    margin: 0 0.5em;
     
 }
-
+#topButton {
+    font-weight: 100;
+    font-size: 1rem;
+    position: fixed;
+    right: 1.4%;
+    bottom: 3.4%;
+    color: rgb(255, 255, 255);
+    padding: 0.5em;
+    border: solid rgb(255, 255, 255) 1px;
+    border-radius: 20%;
+    
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0.04em 0.1em rgba(255, 254, 254, 1);
+    }
+    }
 nav a {
     margin-left: 0;
     color: white;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
 }
 
 @media (max-width: 555px) {
@@ -467,11 +666,11 @@ nav li :hover {
 
 
 .lang-dropdown {
-    z-index: 2;
+    z-index: 1;
     display:inline-block;
 
     .selected-lang {
-        z-index: 2;
+        z-index: 100;
         font-size: 0.7rem;
         display: flex;
         // justify-content: space-between;
@@ -480,13 +679,14 @@ nav li :hover {
         color: white;
         position: fixed;
         top: 0.5em;
-        right: 1%;
+        right: 2%;
         font-family: "Lato";
+        border: none;
         /* letter-spacing: 2.8px; */
         background-color: #f0f7f410;
         // padding: 1em 1.2em;
         // border-radius: 50%;
-        box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.872);        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        // box-shadow: 0 0 0.1em 0.1rem rgba(247, 246, 246, 0.057);        /* offset-x | offset-y | blur-radius | spread-radius | color */
         transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
 
         &:before {
@@ -513,22 +713,27 @@ nav li :hover {
     }
 
 .lang-options {
-    z-index: 3;
-
+    width: 5em;
+    z-index: 333;
+    font-size: 0.8rem;
     display: none;
     position: absolute;
-    // top: 5%;
-    right: 1%;
-    margin-top: 1em;
-    border: yellow 2px solid;
+    right: 0.05vw;
+    top: 2em;
+    
+    border: rgb(184, 178, 178) 2px solid;
+    border-radius: 6%;
         
     a {
+  
         display: block;
         position: relative;
         color: white;
+        
 
         &:hover {
             cursor: pointer;
+            background:rgba(171, 171, 171, 0.913);
         }
     }
 
@@ -538,6 +743,10 @@ nav li :hover {
 
 .show {
     display: inline-block;
+}
+
+.flex-show {
+    display: flex;
 }
 
 
@@ -585,3 +794,4 @@ nav li :hover {
 
 
 /* =========================== */
+

@@ -2,12 +2,13 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta charset="utf-8"/>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./swiper-bundle.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nanum+Gothic:wght@100;400;700&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Nanum+Gothic:wght@100;400;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="./image/favicon.ico" />
     </head>
     <body>
         
@@ -21,24 +22,30 @@
                         <ul>
                             
                             <li><a href="#home">HOME</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#discography">Discography</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#about">ABOUT</a></li>
+                            <li><a href="#discography">DISCOGRAPHY</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                            
                         </ul>
+                        <a href="#home" id="topButton">Top</a>
                     </nav>
                         <div class="lang-dropdown" id="lang-menu">
                             <button class="selected-lang" onmouseover="langFunction()" >
                                 EN
+                            
+                
+                                <div class="lang-options" id="myLang">
+                                    <a id="en">English</a>
+                                    <a id="jp">日本語</a>
+                                    <a id="cn-simp">中文(简体)</a>
+                                    <a id="cn-trad">中文(繁体)</a>
+                                    
+                            
+                                     
+                                </div>
                             </button>
-                            <div class="lang-options" id="myLang">
-                                <a>English</a>
-                                <a>日本語</a>
-                                <a>中文(简体)</a>
-                                <a>中文(繁体)</a>
-                                
-                                
-                                 
-                            </div>
+                            
+                            
                             
                         </div>
                     
@@ -61,8 +68,8 @@
             <main role="main">
                 <div class="section-container" id="home">
                     <div class="container-flex">
-                        <video class="intro-vid" src="./intro_video.mp4" autoplay muted loop></video>
-                        <img class="main-logo" src="./main.svg">
+                        <video class="intro-vid" src="intro_video.mp4" autoplay muted loop></video>
+                        <img class="main-logo" src="image/main.svg">
                     </div>
                     
                     
@@ -79,13 +86,41 @@
                     <h2>Music Director</h2>
 
                 </div>
+                
 
                 <div class="discographySection" id="discography">
-                    <div class="netflix-wrapper">
-                        <div class="netflix-info"></div>
-                        <div class="netflix-list"></div>
+                    
+                    
+                    <div class="recent-discography">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- <div class="swiper-slide netflix-poster"><img id="poster-image" src="discography_images/Where Stars Land.jpg"></div> -->
+                                
+                            </div>
+                                
+                            
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next swiper-button-white"></div>
+                            <div class="swiper-button-prev swiper-button-white"></div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                         
+                        <!-- <div class="netflix-poster"> -->
+                            <!-- <img id="poster-image" src="discography_images/Where Stars Land.jpg"> -->
+                            
+                        
+                    
+                        <div class="netflix-wrapper">
+                            <!-- main-display img here -->
+                            <div class="netflix-info"></div>
+                            
+                            
+                        </div>
+                        <div class="netflix-list"></div>
                     </div>
+                    
+                    
                     <div class="small-container">
 
                     </div>
@@ -94,7 +129,9 @@
                 
                 
                 <div class="contact-wrapper">
-                    <h1>Contact</h1>
+                    <div class="section-title">
+                        <h1>Contact</h1>
+                    </div>
                 <div class="contact-section" id="contact">
                     
                     <div class="contact-container" id="contact-kr">
@@ -136,7 +173,7 @@
                         03-5937-1531<br>
 
                         Email:<br>
-                        Info@jpcon.co.jp<br>
+                        eeekmimura@eeekdada.com <br>
                         
                         <p>
                         </p>
@@ -148,6 +185,7 @@
             </div>
         
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="swiper-bundle.js"></script>
         <script src="main.js"></script>
     </body>
 </html>

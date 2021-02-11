@@ -6,22 +6,24 @@ const scroll = new SmoothScroll('.navbar a[href*="#"]', {
 });
 
 
-const button = document.querySelector('.selected-lang');
-  button.addEventListener('click',(e)=>{
+let button = document.querySelector('.selected-lang');
+button.addEventListener('click',(e)=>{
+    
     e.preventDefault();
+    document.getElementsByClassName("selected-lang").textContent = e.target.id.toString();
     button.classList.add('btn--clicked');
     document.querySelectorAll('span').forEach((element)=>{element.classList.add('expanded')})
     
-    
-    
-    
+
+
+
     /* 
 ---------------------------------------
 just to reset without having to refresh..
  --------------------------------*/
      setTimeout(()=>{button.classList.remove("btn--clicked")},3500);
      setTimeout(()=>{document.querySelectorAll('span').forEach((element)=>{element.classList.remove('expanded')})},1700)});
-
+    
 
  
 let discographyList = [
@@ -646,7 +648,7 @@ let discographyList = [
         "title_eng" : "Don't Dare to Dream",
         "title_cn_simp" : "嫉妒的化身",
         "title_cn_trad" : "嫉妒的化身 ",
-        "img_name" : "Don't Dare to Dream.png",
+        "img_name" : "Don't Dare to Dream.jpg",
         "station" : "SBS",
         "num_episodes" : 24,
         "year" : 2016,
@@ -658,7 +660,7 @@ let discographyList = [
         "title_eng" : "Memory Highlights",
         "title_cn_simp" : "记忆",
         "title_cn_trad" : "記憶",
-        "img_name" : "Memory Highlights.png",
+        "img_name" : "Memory Highlights.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2016,
@@ -670,19 +672,19 @@ let discographyList = [
         "title_eng" : "The Good Wife",
         "title_cn_simp" : "法庭女王",
         "title_cn_trad" : "法庭女王",
-        "img_name" : "The Good Wife.png",
+        "img_name" : "The Good Wife.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2016,
         "type" : "TV Series",
-        "gradient-colors" : ["#4BB3FD", "#F9B3D1", "#fff"]
+        "gradient-colors" : ["#053326", "#095D45", "#095D45"]
     },
     {
         "title_kor" : "시카고 타자기",
         "title_eng" : "Chicago Typewriter",
         "title_cn_simp" : "芝加哥打字机",
         "title_cn_trad" : "芝加哥打字機",
-        "img_name" : "Chicago Typewriter.png",
+        "img_name" : "Chicago Typewriter.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2017,
@@ -694,7 +696,7 @@ let discographyList = [
         "title_eng" : "The Red Teacher",
         "title_cn_simp" : "红色老师",
         "title_cn_trad" : "紅色老師",
-        "img_name" : "The Red Teacher.png",
+        "img_name" : "The Red Teacher.jpg",
         "station" : "KBS",
         "num_episodes" : "Drama Special",
         "year" : 2016,
@@ -706,7 +708,7 @@ let discographyList = [
         "title_eng" : "Guardian: The Lonely and Great God",
         "title_cn_simp" : "孤单又灿烂的神－鬼怪",
         "title_cn_trad" : "孤單又燦爛的神－鬼怪",
-        "img_name" : "Goblin.png",
+        "img_name" : "Guardian.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2018,
@@ -718,7 +720,7 @@ let discographyList = [
         "title_eng" : "The Bride of Habaek",
         "title_cn_simp" : "河伯的新娘",
         "title_cn_trad" : "河伯的新娘",
-        "img_name" : "The Bride of Habaek.png",
+        "img_name" : "The Bride of Habaek.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2017,
@@ -730,7 +732,7 @@ let discographyList = [
         "title_eng" : "Black",
         "title_cn_simp" : "Black",
         "title_cn_trad" : "Black",
-        "img_name" : "Black.png",
+        "img_name" : "Black.jpg",
         "station" : "OCN",
         "num_episodes" : 18,
         "year" : 2017,
@@ -742,7 +744,7 @@ let discographyList = [
         "title_eng" : "Suspicious Partner",
         "title_cn_simp" : "奇怪的搭档",
         "title_cn_trad" : "奇怪的搭檔",
-        "img_name" : "Suspicious Partner.png",
+        "img_name" : "Suspicious Partner.jpg",
         "station" : "SBS",
         "num_episodes" : 40,
         "year" : 2017,
@@ -754,7 +756,7 @@ let discographyList = [
         "title_eng" : "Rain or Shine",
         "title_cn_simp" : "只是相爱的关系",
         "title_cn_trad" : "只是相愛的關係",
-        "img_name" : "Rain or Shine.png",
+        "img_name" : "Rain or Shine.jpg",
         "station" : "JTBC",
         "num_episodes" : 16,
         "year" : 2018,
@@ -766,7 +768,7 @@ let discographyList = [
         "title_eng" : "Not Played",
         "title_cn_simp" : "Not Played",
         "title_cn_trad" : "Not Played",
-        "img_name" :  "Not Played.png",
+        "img_name" :  "Not Played.jpg",
         "station" : "TVN",
         "num_episodes" : "Drama Stage",
         "year" : 2018,
@@ -778,7 +780,7 @@ let discographyList = [
         "title_eng" : "Wok of Love",
         "title_cn_simp" : "油膩的Melo",
         "title_cn_trad" : "油膩的Melo",
-        "img_name" : "Wok of Love.png",
+        "img_name" : "Wok of Love.jpg",
         "station" : "SBS",
         "num_episodes" : 38,
         "year" : 2018,
@@ -790,7 +792,7 @@ let discographyList = [
         "title_eng" : "Life On Mars",
         "title_cn_simp" : "火星生活",
         "title_cn_trad" : "火星生活",
-        "img_name" : "Life On Mars.png",
+        "img_name" : "Life On Mars.jpg",
         "station" : "OCN",
         "num_episodes" : 16,
         "year" : 2018,
@@ -802,31 +804,31 @@ let discographyList = [
         "title_eng" : "Where Stars Land",
         "title_cn_simp" : "狐狸新娘星",
         "title_cn_trad" : "狐狸新娘星",
-        "img_name" : "Where Stars Land.png",
+        "img_name" : "Where Stars Land.jpg",
         "station" : "SBS",
         "num_episodes" : 32,
         "year" : 2018,
         "type" : "TV Series",
-        "gradient-colors" : ["#4BB3FD", "#F9B3D1", "#fff"]
+        "gradient-colors" : ["#CF5C36","#B54E2C", "#E3A28C"]
     },
     {
         "title_kor" : "미스터 션샤인",
         "title_eng" : "Mr.Sunshine",
         "title_cn_simp" : "阳光先生",
         "title_cn_trad" : "陽光先生",
-        "img_name" : "Mr.Sunshine.png",
+        "img_name" : "Mr.Sunshine.jpg",
         "station" : "TVN",
         "num_episodes" : 24,
         "year" : 2018,
         "type" : "TV Series",
-        "gradient-colors" : ["#4BB3FD", "#F9B3D1", "#fff"]
+        "gradient-colors" : ["#504C4C", "#2A2828", "#535050"]
     },
     {
         "title_kor" : "남자친구",
         "title_eng" : "Encounter",
         "title_cn_simp" : "男朋友",
         "title_cn_trad" : "男朋友",
-        "img_name" : "Encounter.png",
+        "img_name" : "Encounter.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2018,
@@ -838,7 +840,7 @@ let discographyList = [
         "title_eng" : "Romance Is a Bonus Book",
         "title_cn_simp" : "罗曼史是别册附录",
         "title_cn_trad" : "羅曼史是別冊附錄",
-        "img_name" : "Romance Is a Bonus Book.png",
+        "img_name" : "Romance Is a Bonus Book.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2019,
@@ -850,19 +852,19 @@ let discographyList = [
         "title_eng" : "Beautiful World",
         "title_cn_simp" : "美丽的世界",
         "title_cn_trad" : "美麗的世界",
-        "img_name" : "Beautiful World.png",
+        "img_name" : "Beautiful World.jpg",
         "station" : "JTBC",
         "num_episodes" : 16,
         "year" : 2019,
         "type" : "TV Series",
-        "gradient-colors" : ["#4BB3FD", "#F9B3D1", "#fff"]
+        "gradient-colors" : ["#D8CC34", "#ABA221", "#fff"]
     },
     {
         "title_kor" : "베가본드",
         "title_eng" : "Vagabond",
         "title_cn_simp" : "浪客行",
         "title_cn_trad" : "浪客行",
-        "img_name" : "Vagabond.png",
+        "img_name" : "Vagabond.jpg",
         "station" : "SBS",
         "num_episodes" : 16,
         "year" : 2019,
@@ -872,21 +874,21 @@ let discographyList = [
     {
         "title_kor" : "사랑의 불시착",
         "title_eng" : "Crash Landing On You",
-        "img_name" : "Crash Landing On You.png",
+        "img_name" : "Crash Landing On You.jpg",
         "title_cn_simp" : "爱的迫降",
         "title_cn_trad" : "愛的迫降",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2019,
         "type" : "TV Series",
-        "gradient-colors" : ["#D7263D", "#F46036", "#C5D86D" ]
+        "gradient-colors" : ["#279AF1", "#F7F7FF", "#D42C33" ]
     },
     {
         "title_kor" : "사이코지만 괜찮아",
         "title_eng" : "It's Okay to Not Be Okay",
         "title_cn_simp" : "虽然是精神病但没关系",
         "title_cn_trad" : "雖然是精神病但沒關係",
-        "img_name" : "It's Okay to Not Be Okay.png",
+        "img_name" : "It's Okay to Not Be Okay.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2020,
@@ -898,7 +900,7 @@ let discographyList = [
         "title_eng" : "Record of Youth",
         "title_cn_simp" : "青春记录",
         "title_cn_trad" : "青春記錄",
-        "img_name" : "Record of Youth.png",
+        "img_name" : "Record of Youth.jpg",
         "station" : "TVN",
         "num_episodes" : 16,
         "year" : 2020,
@@ -910,7 +912,7 @@ let discographyList = [
         "title_eng" : "Lovestruck in the City",
         "title_cn_simp" : "都市男女爱情法",
         "title_cn_trad" : "都市男女愛情法",
-        "img_name" : "Lovestruck in the City.png",
+        "img_name" : "Lovestruck in the City.jpg",
         "station" : "Kakao TV",
         "num_episodes" : 17,
         "year" : 2021,
@@ -934,7 +936,7 @@ for (let i = discographyList.length -24; i > -1; i --){
     // adding div.img to discoList
 
     let img_element = discoList.appendChild(document.createElement("img"));
-    img_element.src = "discography_png/" + discographyList[i]["img_name"];
+    img_element.src = "./discography_png/" + discographyList[i]["img_name"];
     let discoImage = img_element.classList.add("discographyImg");
 
 
@@ -954,14 +956,15 @@ for (let i = discographyList.length -24; i > -1; i --){
 }
 
 
-
 /////////// main discography items
 
 let netflixList = document.querySelector(".netflix-list");
 let netflixListUl = netflixList.appendChild(document.createElement("ul"));
 let netflixInfo = document.querySelector(".netflix-info");
 let netflixWrapper = document.querySelector(".netflix-wrapper");
-let numToShow = 24;
+let posterImage = document.querySelectorAll("poster-image swiper-slide-active");
+
+let numToShow = 25;
 let discoMain = [];
 for (let i = discographyList.length -1; i > discographyList.length - numToShow; i --) {
     discoMain.push(discographyList[i])
@@ -970,42 +973,62 @@ for (let i = discographyList.length -1; i > discographyList.length - numToShow; 
 
 netflixWrapper.appendChild(document.createElement("img")).classList.add("main-display");
 let main_netflix = document.querySelector(".main-display");
-main_netflix.id = discoMain[0]["title_eng"]
-main_netflix.src = "discography_png/" + discoMain[0]["img_name"];
+main_netflix.id = posterImage.id;
 
 
-/// displaying Info over the main-display when hover
-
-main_netflix.addEventListener("mouseover", function () {
-    netflixInfo.style.display = "inline-block";
-    let discoIndex = discoMain.findIndex(i => i.title_eng == main_netflix.id);
-    netflixInfo.innerHTML = discoMain[discoIndex]["title_kor"] + "<br>" 
-                                + discoMain[discoIndex]["title_eng"] + "<br>"
-                                + discoMain[discoIndex]["station"] + "<br>"
-                                + discoMain[discoIndex]["year"]
-})
-main_netflix.addEventListener("mouseout", function () {
-    netflixInfo.style.display = "none";
-})
 
 
+/// displaying Info over the main-display & poster when hovered
+
+// posterImage.addEventListener("mouseover" , function () {
+//     main_netflix.style.display = "flex";
+// })
+// posterImage.addEventListener("mouseout" , function () {
+//     main_netflix.style.display = "none";
+// })
+
+
+
+
+
+// List of the main-display and displaying
 
 for (let i = 0; i < discoMain.length -1; i ++) {
-    let netflixElement = netflixListUl.appendChild(document.createElement("li"));
-    netflixElement.addEventListener("click", function () {
-        main_netflix.src = "discography_png/" + discoMain[i]["img_name"]
-        main_netflix.id = discoMain[i]["title_eng"]
-        let gradientBack = "linear-gradient(to right, " 
-                                + discoMain[i]["gradient-colors"][0] 
-                                + " 4%," + discoMain[i]["gradient-colors"][1]
-                                + "," 
-                                + discoMain[i]["gradient-colors"][2] + ")";
-        netflixWrapper.style.background = gradientBack;
-    } );
+
+    /// slider 
+    let swiperWrapper = document.querySelector(".swiper-wrapper");
+    let swiperSlide = swiperWrapper.appendChild(document.createElement("div"));
+    swiperSlide.classList.add("swiper-slide");
+    swiperSlide.classList.add("netflix-poster");
+    let swiperImage = swiperSlide.appendChild(document.createElement("img"));
+    swiperImage.classList.add("poster-image")
+    swiperImage.id = discoMain[i]["title_eng"]
+    swiperImage.src = "discography_images/" + discoMain[i]["title_eng"] + ".jpg";
+
+
     
-    netflixElement.textContent = discoMain[i]["title_kor"];
     
+var netflixElement = netflixListUl.appendChild(document.createElement("li"));
+// main_netflix.src = "./discography_png/" + discoMain[i]["img_name"]
+// main_netflix.id = discoMain[i]["title_eng"]
+
 }
+
+// netflixElement.addEventListener("click", function () {
+//         main_netflix.src = "./discography_png/" + discoMain[i]["img_name"]
+//         main_netflix.id = discoMain[i]["title_eng"]
+//         let gradientBack = "linear-gradient(to right, " 
+//                                 + discoMain[i]["gradient-colors"][0] 
+//                                 + " 4%," + discoMain[i]["gradient-colors"][1]
+//                                 + "," 
+//                                 + discoMain[i]["gradient-colors"][2] + ")";
+//         netflixWrapper.style.background = gradientBack;
+//     } );
+    
+//     netflixElement.textContent = discoMain[i]["title_kor"];
+    
+//}
+
 
 
 
@@ -1013,19 +1036,99 @@ for (let i = 0; i < discoMain.length -1; i ++) {
 
 //// Language Switch
 function langFunction() {
-    document.getElementById("myLang").classList.toggle("show");
-  }
+    document.getElementById("myLang").classList.add("show");
+}
   
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.lang-dropdown')) {
-      var dropdowns = document.getElementsByClassName("lang-options");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.lang-dropdown')) {
+    var dropdowns = document.getElementsByClassName("lang-options");
+    
+    for (let i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
     }
-  }
+    }
+}
+}
+
+
+
+let posterElements = document.querySelectorAll(".netflix-list > ul > li");
+const swiper = new Swiper('.swiper-container', {
+
+    
+    // Optional parameters
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 100,
+    loop: true,              //infinite loop
+    mousewheel: true,
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + discoMain[index].title_eng + '</span>';
+           
+      },
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+
+let activeSlide = document.querySelector(".swiper-slide-active > img");
+
+let pageBullet = document.getElementsByClassName('swiper-pagination-bullet');
+// console.log(activeSlide.id)
+for (let i = 0; i < pageBullet.length; i ++) {
+    pageBullet[i].id = pageBullet[i].textContent;
+    // console.log(pageBullet[i].id);
+    // console.log(discoMain[i].title_kor)
+    let discoIndex = discoMain.findIndex(index => index.title_eng == pageBullet[i].id)
+    main_netflix.src = "./discography_png/" + discoMain[0].img_name;
+    
+
+    
+    pageBullet[i].addEventListener("click", function () {
+        main_netflix.src = "./discography_png/" + discoMain[discoIndex].img_name;
+        main_netflix.id = discoMain[discoIndex].title_eng;
+       
+        let main_netflix_info = document.querySelector(".netflix-info")
+
+   
+        main_netflix_info.innerHTML = discoMain[i]["title_kor"] + " / " + discoMain[i]["title_eng"] + "<br>"; 
+
+        if (typeof(discoMain[i]["num_episodes"])=== "number"){
+        let stationInfo = main_netflix_info.appendChild(document.createElement("p")).textContent = discoMain[i]["station"] + "(" + discographyList[i]["num_episodes"] + " episodes)";
+        } else {
+            main_netflix_info.appendChild(document.createElement("p")).textContent = discoMain[i]["station"];
+        }
+        main_netflix_info.appendChild(document.createElement("br"));
+
+
+        
+    
+
+
+        
+        
+    })
+}
+
+
+console.log(discoMain)
+
